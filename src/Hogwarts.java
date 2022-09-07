@@ -1,12 +1,20 @@
 public abstract class Hogwarts {
+    private String fullName;
+    private int magic;
+    private int teleport;
 
-    String fullName;
-    int magic;
-    int teleport;
 
     public Hogwarts(String fullName, int magic, int teleport) {
+        this.fullName = fullName;
         this.magic = magic;
         this.teleport = teleport;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
         this.fullName = fullName;
     }
 
@@ -15,10 +23,6 @@ public abstract class Hogwarts {
     }
 
     public void setMagic(int magic) {
-        if (magic > 0 || magic < 100) {
-            throw new RuntimeException("Неверное значение");
-        }
-        this.magic = magic;
         this.magic = magic;
     }
 
@@ -27,24 +31,36 @@ public abstract class Hogwarts {
     }
 
     public void setTeleport(int teleport) {
-        if (teleport > 0 || teleport < 100) {
-            throw new RuntimeException("Неверное значение");
-        }
         this.teleport = teleport;
     }
 
-    public static  void compareStudents(Hogwarts studentsFirst, Hogwarts studentSecond) {
-        int powerOne = studentsFirst.magic + studentsFirst.teleport;
-        int powerTwo = studentSecond.magic + studentSecond.teleport;
-        if (powerOne > powerTwo) {
-            System.out.println(studentsFirst.fullName + "сильнее чем " + studentSecond.fullName);
-        }
-        if (powerOne < powerTwo) {
-            System.out.println(studentSecond.fullName + "сильнее чем " + studentsFirst.fullName);
-        } else {
-            System.out.println(studentsFirst.fullName + "такой же сильный как и " + studentSecond.fullName);
-        }
 
+    private int ability(){
+        return  magic+ teleport;
+    }
+    public void print(){
+        System.out.println(this);
+    }
+
+    public  void  compareHogwarts(Hogwarts hogwartsStudent){
+        int ability1=ability();
+        int ability2=hogwartsStudent.ability();
+        if (ability1>ability2){
+            System.out.printf("Студент %s лучше, чем студент %s:%d VS %d%n",
+            getFullName(),hogwartsStudent.getFullName(), ability1, ability2);
+        } else if (ability2>ability1)
+            System.out.printf("Студент %s лучше, чем студент %s:%d VS %d%n",
+            getFullName(),hogwartsStudent.getFullName(), ability1,ability2);
+        else {
+            System.out.printf("Студент %s такой же,как и  студент %s:%d VS %d%n",
+                    getFullName(),hogwartsStudent.getFullName(), ability1,ability2);
+        }}
+
+    @Override
+    public String toString() {
+        return String.format("Студент %s; сила магии: %d; сила трансгрессии:%d",
+                fullName, magic, teleport);
     }
 }
+
 

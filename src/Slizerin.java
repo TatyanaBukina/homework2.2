@@ -1,5 +1,18 @@
 public class Slizerin extends  Hogwarts{
 
+    int cunning;
+    int determination;
+    int resourcefulness;
+    int lustForPower;
+
+    public Slizerin(String fullName, int magic, int teleport, int cunning, int determination, int resourcefulness, int lustForPower) {
+        super(fullName, magic, teleport);
+        this.cunning = cunning;
+        this.determination = determination;
+        this.resourcefulness = resourcefulness;
+        this.lustForPower = lustForPower;
+    }
+
     public int getCunning() {
         return cunning;
     }
@@ -32,42 +45,32 @@ public class Slizerin extends  Hogwarts{
         this.lustForPower = lustForPower;
     }
 
-    public Slizerin(String fullName, int magic, int teleport, int cunning, int determination, int resourcefulness, int lustForPower) {
-        super(fullName, magic, teleport);
-        if (cunning> 0 || cunning < 100) {
-            throw new RuntimeException("Невероное значение mind");
-        }
-        if (determination > 0 || determination < 100) {
-            throw new RuntimeException("Неверное значение wisdom");
-        }
-        if (resourcefulness > 0 || resourcefulness< 100) {
-            throw new RuntimeException("Неверное значение wit");
-        }
-        if (lustForPower > 0 || lustForPower< 100) {
-            throw new RuntimeException("Неверное значение creation");
-        }
-        this.cunning = cunning;
-        this.determination = determination;
-        this.resourcefulness = resourcefulness;
-        this.lustForPower = lustForPower;
+
+    private int ability(){
+        return  cunning+determination+resourcefulness+lustForPower;
+    }
+    public void print(){
+        System.out.println(this);
     }
 
-    int cunning;
-    int determination;
-    int resourcefulness;
-    int lustForPower;
-
-    public void compareStudents(Slizerin studentSecond){
-        int powerOne =this.cunning+ this.determination+this.resourcefulness+ this.lustForPower;
-        int powerTwo = studentSecond.cunning+ studentSecond.determination+studentSecond.resourcefulness+ studentSecond.lustForPower
-        if (powerOne > powerTwo) {
-            System.out.println(this.fullName + "сильнее чем " + studentSecond.fullName);
+    public  void  compareSlizerin(Slizerin slizerinStudent){
+        int ability1=ability();
+        int ability2=slizerinStudent.ability();
+        if (ability1>ability2){
+            System.out.printf("Слизеринец %s лучше, чем слизеринец %s:%d VS %d%n",
+            getFullName(),slizerinStudent.getFullName(), ability1,ability2);
+        } else if (ability2>ability1){
+            System.out.printf("Слизеринец %s лучше, чем слизеринец %s:%d VS %d%n",
+            getFullName(),slizerinStudent.getFullName(), ability1,ability2);
         }
-        if (powerOne < powerTwo) {
-            System.out.println(studentSecond.fullName + "сильнее чем " + this.fullName);
-        } else {
-            System.out.println(this.fullName + "такой же сильный как и " + studentSecond.fullName);
-        }
-
+        else {
+            System.out.printf("Слизеринец %s такой же,как и  слизеринец %s:%d VS %d%n",
+            getFullName(),slizerinStudent.getFullName(), ability1,ability2);
+        }}
+    @Override
+    public String toString() {
+        return String.format("%s; хитрость:%d;решительность:%d; амбициозность:%d, находчивость^%d",
+                super.toString(), cunning, determination, resourcefulness, lustForPower);
     }
 }
+

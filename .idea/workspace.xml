@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="100d44e5-6c29-476e-beec-32689477c3ce" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Griffindor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Hogwarts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Kogtevran.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Puffenduy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Slizerin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Griffindor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Griffindor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Hogwarts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Hogwarts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Kogtevran.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kogtevran.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Puffenduy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Puffenduy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Slizerin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Slizerin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,13 +40,13 @@
     <option name="autoscrollToSource" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -70,6 +70,8 @@
       <option name="presentableId" value="Default" />
       <updated>1662282878788</updated>
       <workItem from="1662282880162" duration="13319000" />
+      <workItem from="1662442325801" duration="9936000" />
+      <workItem from="1662532622388" duration="9011000" />
     </task>
     <servers />
   </component>

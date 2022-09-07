@@ -1,48 +1,68 @@
 public class Griffindor extends Hogwarts {
 
+    private int honor;
+    public int bravery;
+    public int dignity;
+
+    public Griffindor(String fullName, int magic, int teleport, int honor, int bravery, int dignity) {
+        super(fullName, magic, teleport);
+        this.honor = honor;
+        this.bravery = bravery;
+        this.dignity = dignity;
+    }
 
     public int getHonor() {
         return honor;
+    }
+
+    public void setHonor(int honor) {
+        this.honor = honor;
     }
 
     public int getBravery() {
         return bravery;
     }
 
+    public void setBravery(int bravery) {
+        this.bravery = bravery;
+    }
+
     public int getDignity() {
         return dignity;
     }
 
-    private int honor;
-    private int bravery;
-    private int dignity;
-
-    public Griffindor() {
-        super(fullName, magic, teleport);
-        if (honor > 0 || honor < 100) {
-            throw new RuntimeException("Невероное значение honor");
-        }
-        if (bravery > 0 || bravery < 100) {
-            throw new RuntimeException("Неверное значение bravery");
-        }
-        if (dignity > 0 || dignity < 100) {
-            throw new RuntimeException("Неверное значение digniry");
-        }
-        this.honor = honor;
-        this.bravery = bravery;
+    public void setDignity(int dignity) {
         this.dignity = dignity;
     }
-    public void compareStudents(Griffindor studentSecond){
-        int powerOne =this.honor+ this.bravery+this.dignity;
-        int powerTwo = studentSecond.honor+ studentSecond.dignity+studentSecond.bravery;
-        if (powerOne > powerTwo) {
-            System.out.println(this.fullName + "сильнее чем " + studentSecond.fullName);
-        }
-        if (powerOne < powerTwo) {
-            System.out.println(studentSecond.fullName + "сильнее чем " + this.fullName);
-        } else {
-            System.out.println(this.fullName + "такой же сильный как и " + studentSecond.fullName);
-        }
-
+    private int ability(){
+        return  honor+ bravery+dignity;
     }
-}
+    public void print(){
+        System.out.println(this);
+    }
+
+    public  void  compareGriffindor(Griffindor griffindorStudent) {
+        int ability1 = ability();
+        int ability2 = griffindorStudent.ability();
+        if (ability1 > ability2) {
+            System.out.printf("Гриффиндорец %s лучше, чем гриффиндорец %s:%d VS %d%n",
+                    getFullName(), griffindorStudent.getFullName(), ability1, ability2);
+        } else if (ability2 > ability1) {
+            System.out.printf("Гриффиндорец %s лучше, чем гриффиндорец %s:%d VS %d%n",
+                    getFullName(), griffindorStudent.getFullName(), ability1, ability2);
+        } else {
+            System.out.printf("Гриффиндорец %s такой же,как и  гриффиндорец %s:%d VS %d%n",
+                    getFullName(), griffindorStudent.getFullName(), ability1, ability2);
+
+        }
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s; благородство:%d;честь:%d; храбрость:%d",
+                super.toString(),honor,dignity,bravery);
+}}
+
+
+
+

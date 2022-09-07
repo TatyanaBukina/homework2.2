@@ -1,26 +1,17 @@
-public class Puffenduy extends Hogwarts{
+public class Puffenduy extends Hogwarts {
+
+    private int mind;
+    private int wisdom;
+    private int wit;
+    private int creation;
 
     public Puffenduy(String fullName, int magic, int teleport, int mind, int wisdom, int wit, int creation) {
         super(fullName, magic, teleport);
-        if (mind > 0 || mind < 100) {
-            throw new RuntimeException("Невероное значение mind");
-        }
-        if (wisdom > 0 || wisdom < 100) {
-            throw new RuntimeException("Неверное значение wisdom");
-        }
-        if (wit > 0 || wit< 100) {
-            throw new RuntimeException("Неверное значение wit");
-        }
-        if (creation > 0 || creation< 100) {
-            throw new RuntimeException("Неверное значение creation");
-        }
         this.mind = mind;
         this.wisdom = wisdom;
         this.wit = wit;
         this.creation = creation;
     }
-
-    int mind;
 
     public int getMind() {
         return mind;
@@ -54,22 +45,33 @@ public class Puffenduy extends Hogwarts{
         this.creation = creation;
     }
 
-    int wisdom;
-        int wit;
-        int creation;
+    private int ability(){
+        return  mind+ wisdom+wit+creation;
+    }
+    public void print(){
+        System.out.println(this);
+    }
 
-
-    public void compareStudents(Puffenduy studentSecond){
-        int powerOne =this.mind+ this.wisdom+this.wit+ this.creation;
-        int powerTwo = studentSecond.mind+ studentSecond.wisdom+studentSecond.wit+ studentSecond.creation;
-        if (powerOne > powerTwo) {
-            System.out.println(this.fullName + "сильнее чем " + studentSecond.fullName);
+    public  void  compareHogwarts(Puffenduy puffenduyStudent){
+        int ability1=ability();
+        int ability2=puffenduyStudent.ability();
+        if (ability1>ability2){
+            System.out.printf("Пуффендуец %s лучше, чем пуффендуец %s:%d VS %d%n",
+            getFullName(),puffenduyStudent.getFullName(), ability1,ability2);
+        } else if (ability2>ability1){
+            System.out.printf("Пуффендуец %s лучше, чем пуффендуец %s:%d VS %d%n",
+            getFullName(),puffenduyStudent.getFullName(), ability1,ability2);
         }
-        if (powerOne < powerTwo) {
-            System.out.println(studentSecond.fullName + "сильнее чем " + this.fullName);
-        } else {
-            System.out.println(this.fullName + "такой же сильный как и " + studentSecond.fullName);
+        else {
+            System.out.printf("Пуффендуец %s такой же,как и  пуффендуец %s:%d VS %d%n",
+            getFullName(),puffenduyStudent.getFullName(), ability1,ability2);
         }
+    }
 
+    @Override
+    public String toString() {
+        return String.format("%s; ум:%d;мудрость:%d; остроумие:%d, творчество^%d",
+                super.toString(), mind, wisdom, wit, creation);
     }
 }
+
